@@ -1,0 +1,10 @@
+E:\IncomeProject\Income\Income.Models\bin\Debug\Income.Models.dll
+E:\IncomeProject\Income\Income.Models\bin\Debug\Income.Models.pdb
+E:\IncomeProject\Income\Income.Models\obj\Debug\Income.Models.csprojResolveAssemblyReference.cache
+E:\IncomeProject\Income\Income.Models\obj\Debug\Income.Models.dll
+E:\IncomeProject\Income\Income.Models\obj\Debug\Income.Models.pdb
+E:\IncomeTest\Income\Income.Models\bin\Debug\Income.Models.dll
+E:\IncomeTest\Income\Income.Models\bin\Debug\Income.Models.pdb
+E:\IncomeTest\Income\Income.Models\obj\Debug\Income.Models.csprojResolveAssemblyReference.cache
+E:\IncomeTest\Income\Income.Models\obj\Debug\Income.Models.dll
+E:\IncomeTest\Income\Income.Models\obj\Debug\Income.Models.pdb

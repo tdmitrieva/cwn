@@ -1,0 +1,5 @@
+E:\IncomeProject\Income\Income.Common\bin\Debug\Income.Common.dll
+E:\IncomeProject\Income\Income.Common\bin\Debug\Income.Common.pdb
+E:\IncomeProject\Income\Income.Common\obj\Debug\Income.Common.csprojResolveAssemblyReference.cache
+E:\IncomeProject\Income\Income.Common\obj\Debug\Income.Common.dll
+E:\IncomeProject\Income\Income.Common\obj\Debug\Income.Common.pdb
