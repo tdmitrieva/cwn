@@ -282,6 +282,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Income.Models\Income.Models.csproj">
+      <Project>{f9b2f383-48d8-428f-8529-5b239db3f253}</Project>
+      <Name>Income.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Income.Services\Income.Services.csproj">
       <Project>{b970be44-e73b-4623-8a8f-e545e31f554d}</Project>
       <Name>Income.Services</Name>

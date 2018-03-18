@@ -8,7 +8,6 @@ namespace Income.Repositories
     {
         public IncomeDbContext(): base("name=IncomeDataConnection")
         {
-            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Directory.GetCurrentDirectory());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<IncomeDbContext, Migrations.Configuration>("IncomeDataConnection"));
         }
 

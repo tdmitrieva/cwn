@@ -1,7 +1,9 @@
-﻿namespace Income.Services
+﻿using Income.Models;
+
+namespace Income.Services
 {
     public interface IUserServise
     {
-        bool IsUserExists(string email);
+        User GetByEmail(string email);
     }
 }

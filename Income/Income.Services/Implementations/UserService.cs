@@ -14,11 +14,11 @@ namespace Income.Services.Implementations
             unitOfWork = unitOfWorkInstance;
         }
 
-        public bool IsUserExists(string email)
+        public User GetByEmail(string email)
         {
             Repository<User> userRepository = unitOfWork.GetRepository<User>();
-            bool userExists = userRepository.Query().Any(user => string.Compare(user.Email, email, true) == 0);
-            return userExists;
+            User user = userRepository.Query().FirstOrDefault(u => string.Compare(u.Email, email, true) == 0);
+            return user;
         }
     }
 }
