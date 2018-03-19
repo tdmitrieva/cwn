@@ -1,0 +1,13 @@
+<div fxLayout="column">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Welcome to Income Project</h1>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="user.Email" [formControl]="emailControl" required placeholder="Input your email" />
+        <mat-error *ngIf="emailControl.hasError('required')">Please input you email.</mat-error>
+        <mat-error *ngIf="emailControl.hasError('usernotexists')">User with this email doesn't exist.</mat-error>
+      </mat-form-field>
+      <div fxLayoutAlign="center center">
+        <button mat-raised-button (click)="onSubmitClick(user.email)">Go</button>
+      </div>
+  </div>
+</div>
