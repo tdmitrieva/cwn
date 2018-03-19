@@ -15,6 +15,7 @@ namespace Income.Services.App_Start
         private static void RegisterTypes(IUnityContainer container)
         {
             container.RegisterType<IUserServise, UserService>();
+            container.RegisterType<IFinanceService, FinanceService>();
         }
     }
 }

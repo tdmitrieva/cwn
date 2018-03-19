@@ -1,6 +1,9 @@
 ﻿using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using System.Net.Http.Headers;
+using System.Net.Http.Formatting;
+using System;
+using System.Web.Http.Cors;
 
 namespace Income.Web
 {
@@ -17,6 +20,8 @@ namespace Income.Web
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

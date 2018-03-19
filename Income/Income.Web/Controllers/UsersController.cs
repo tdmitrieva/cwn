@@ -1,5 +1,6 @@
 ﻿using Income.Models;
 using Income.Services;
+using Income.Web.ViewModels;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -16,11 +17,11 @@ namespace Income.Web.Controllers
             this.userService = userService;
         }
 
-        [ResponseType(typeof(bool))]
         public HttpResponseMessage Get([FromUri]string email)
         {
             User user = userService.GetByEmail(email);
-            return Request.CreateResponse(HttpStatusCode.OK, user);
+            UserVm userVm = user != null ? new UserVm { Email = user.Email } : null;
+            return Request.CreateResponse(HttpStatusCode.OK, userVm);
         }
     }
 }

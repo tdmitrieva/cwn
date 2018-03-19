@@ -232,3 +232,6 @@ E:\IncomeTest\Income\Income.Web\bin\Income.Repositories.pdb
 E:\IncomeTest\Income\Income.Web\obj\Debug\Income.Web.csprojResolveAssemblyReference.cache
 E:\IncomeTest\Income\Income.Web\obj\Debug\Income.Web.dll
 E:\IncomeTest\Income\Income.Web\obj\Debug\Income.Web.pdb
+E:\IncomeTest\Income\Income.Web\bin\System.Web.Cors.dll
+E:\IncomeTest\Income\Income.Web\bin\System.Web.Http.Cors.dll
+E:\IncomeTest\Income\Income.Web\bin\System.Web.Http.Cors.xml
