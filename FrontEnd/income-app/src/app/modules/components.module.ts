@@ -27,13 +27,12 @@ const routes: Route[] = [
   ],
   imports: [
     FormsModule,
-    RouterModule,
     ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     CommonModule,
     BrowserModule,
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes),
   ],
   exports: [
     FormsModule,

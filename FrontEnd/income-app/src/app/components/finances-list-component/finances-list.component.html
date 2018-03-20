@@ -1,3 +1,26 @@
-<p>
-  finances-list-component works!
-</p>
+<div>
+  <button mat-raised-button>Add</button>
+</div>
+<div fxLayout="row">&nbsp;</div>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="financesList">
+    <ng-container matColumnDef="Date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let finance"> {{element.Date}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Amount">
+      <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+      <mat-cell *matCellDef="let finance"> {{element.Amount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Currency">
+      <mat-header-cell *matHeaderCellDef> Currency </mat-header-cell>
+      <mat-cell *matCellDef="let finance"> {{element.Currency}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
