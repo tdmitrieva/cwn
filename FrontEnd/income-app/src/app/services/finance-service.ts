@@ -13,4 +13,11 @@ export class FinanceService {
       return this.http.get<Array<Finance>>(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE + '?email=' + email);
   }
 
+  public addFinance(email: string, finance: Finance){
+    return this.http.post(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE, {
+      email: email,
+      finance: finance
+    });
+  }
+
 }

@@ -16,6 +16,7 @@ namespace Income.Services.App_Start
         {
             container.RegisterType<IUserServise, UserService>();
             container.RegisterType<IFinanceService, FinanceService>();
+            container.RegisterType<ICurrencyService, CurrencyService>();
         }
     }
 }

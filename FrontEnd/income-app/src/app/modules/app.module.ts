@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavigationConstants } from "../common/navigation-constants";
 import { HttpModule } from '@angular/http';
 import { FinanceService } from "../services/finance-service";
+import { CurrencyService } from "../services/currency-service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FinanceService } from "../services/finance-service";
   providers: [
     NavigationConstants,
     LoginService,
-    FinanceService
+    FinanceService,
+    CurrencyService
   ],
   bootstrap: [AppComponent]
 })

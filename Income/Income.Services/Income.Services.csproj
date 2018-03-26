@@ -90,7 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="ICurrencyService.cs" />
     <Compile Include="IFinanceService.cs" />
+    <Compile Include="Implementations\CurrencyService.cs" />
     <Compile Include="Implementations\FinanceService.cs" />
     <Compile Include="Implementations\UserService.cs" />
     <Compile Include="IUserServise.cs" />

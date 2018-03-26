@@ -7,4 +7,6 @@ export class NavigationConstants {
     public USERS_BASE: string = 'users'
 
     public FINANCES_BASE: string = 'finances';
+
+    public CURRENCIES_BASE: string = 'currencies'
 }

@@ -2,7 +2,7 @@
 
 namespace Income.Models
 {
-    public class Currency
+    public class Currency: BaseEntity
     {
         [Key]
         public int Id { get; set; }

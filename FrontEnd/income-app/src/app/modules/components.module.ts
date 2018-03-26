@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FinancesListComponent } from "../components/finances-list-component/finances-list.component";
 import { RouterModule, Route, Router } from '@angular/router';
+import { AddComponent } from "../components/add/add.component";
 
 const routes: Route[] = [
     {
@@ -23,7 +24,8 @@ const routes: Route[] = [
 @NgModule({
   declarations: [
     LoginComponent,
-    FinancesListComponent
+    FinancesListComponent,
+    AddComponent
   ],
   imports: [
     FormsModule,
@@ -40,6 +42,7 @@ const routes: Route[] = [
     MaterialModule,
     LoginComponent,
     FinancesListComponent,
+    AddComponent,
     FlexLayoutModule,
     CommonModule,
     BrowserModule

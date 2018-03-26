@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/Observable";
 import { HttpClient } from "@angular/common/http";
 import { NavigationConstants } from "../common/navigation-constants";
-import { User } from "../models/user";
+import { Currency } from "../models/currency";
 
 @Injectable()
-export class LoginService {
+export class CurrencyService {
   constructor(private http: HttpClient,
   private navigationConstants: NavigationConstants) { }
 
-  public getUser(email: string): Observable<User> {
-
-    return this.http.get<User>(this.navigationConstants.API_URL + this.navigationConstants.USERS_BASE + '?email=' + email);
+  public getCurrencies(): Observable<Array<Currency>> {
+      return this.http.get<Array<Currency>>(this.navigationConstants.API_URL + this.navigationConstants.CURRENCIES_BASE);
   }
 
 }

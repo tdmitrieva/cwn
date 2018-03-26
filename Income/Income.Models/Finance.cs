@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Income.Models
 {
-    public class Finance
+    public class Finance: BaseEntity
     {
         [Key]
         public int Id { get; set; }

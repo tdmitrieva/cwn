@@ -13,9 +13,11 @@ namespace Income.Web.Controllers
     public class FinancesController : ApiController
     {
         private IFinanceService financeService;
-        public FinancesController(IFinanceService financeService)
+        private ICurrencyService currencyService;
+        public FinancesController(IFinanceService financeService, ICurrencyService currencyService)
         {
             this.financeService = financeService;
+            this.currencyService = currencyService;
         }
 
         public HttpResponseMessage Get(string email)
@@ -28,14 +30,33 @@ namespace Income.Web.Controllers
                     Id = f.Id,
                     Amount = f.Amount,
                     Date = f.Date,
-                    Currency = f.Currency.Symbol
+                    CurrencyId = f.Currency.Id
                 });
                 return Request.CreateResponse(HttpStatusCode.OK, financesVm); ;
             }
             catch (ArgumentException)
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Enumerable.Empty<FinanceVm>());
+                return Request.CreateResponse(HttpStatusCode.BadRequest, Enumerable.Empty<FinanceVm>());
             }
+        }
+
+        public HttpResponseMessage Post(FinancePostVm financeToAdd)
+        {
+            try
+            {
+                Finance financeModel = new Finance
+                {
+                    Amount = financeToAdd.Finance.Amount,
+                    Currency = currencyService.GetById(financeToAdd.Finance.CurrencyId),
+                    Date = financeToAdd.Finance.Date
+                };
+                financeService.AddFinance(financeToAdd.Email, financeModel);
+            }
+            catch (ArgumentException)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
