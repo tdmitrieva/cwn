@@ -30,7 +30,12 @@ namespace Income.Web.Controllers
                     Id = f.Id,
                     Amount = f.Amount,
                     Date = f.Date,
-                    CurrencyId = f.Currency.Id
+                    Currency = new CurrencyVm
+                    {
+                        Id = f.Currency.Id,
+                        Name = f.Currency.Name,
+                        Symbol = f.Currency.Symbol
+                    }
                 });
                 return Request.CreateResponse(HttpStatusCode.OK, financesVm); ;
             }
@@ -47,7 +52,7 @@ namespace Income.Web.Controllers
                 Finance financeModel = new Finance
                 {
                     Amount = financeToAdd.Finance.Amount,
-                    Currency = currencyService.GetById(financeToAdd.Finance.CurrencyId),
+                    Currency = currencyService.GetById(financeToAdd.Finance.Currency.Id),
                     Date = financeToAdd.Finance.Date
                 };
                 financeService.AddFinance(financeToAdd.Email, financeModel);

@@ -1,15 +1,15 @@
 <div fxLayout="row" fxLayoutGap="5px">
   <mat-form-field fxFlex>
-    <input matInput [matDatepicker]="transactionDate" placeholder="Choose a date" [(ngModel)]="finance.Date">
+    <input name="transactionDate" matInput [matDatepicker]="transactionDate" placeholder="Choose a date" [(ngModel)]="finance.Date">
     <mat-datepicker-toggle matSuffix [for]="transactionDate"></mat-datepicker-toggle>
     <mat-datepicker #transactionDate></mat-datepicker>
   </mat-form-field>
   <mat-form-field fxFlex>
-    <input type="number" matInput placeholder="Input amount" [(ngModel)]="finance.Amount">
+    <input name="amount" type="number" matInput placeholder="Input amount" [(ngModel)]="finance.Amount">
   </mat-form-field>
   <mat-form-field fxFlex>
-    <mat-select placeholder="Select currency" [(ngModel)]="finance.Amount">
-      <mat-option *ngFor="let currency of currencyList" [(ngModel)]="currency.Id">
+    <mat-select name="currency" placeholder="Select currency" [(ngModel)]="selectedCurrency" >
+      <mat-option *ngFor="let currency of currencyList" [(value)]="currency.Id">
         {{ currency.Symbol }}
       </mat-option>
     </mat-select>

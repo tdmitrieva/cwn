@@ -6,6 +6,7 @@ import { Currency } from "../models/currency";
 
 @Injectable()
 export class CurrencyService {
+
   constructor(private http: HttpClient,
   private navigationConstants: NavigationConstants) { }
 

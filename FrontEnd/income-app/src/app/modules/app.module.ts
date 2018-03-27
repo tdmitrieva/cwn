@@ -11,6 +11,7 @@ import { NavigationConstants } from "../common/navigation-constants";
 import { HttpModule } from '@angular/http';
 import { FinanceService } from "../services/finance-service";
 import { CurrencyService } from "../services/currency-service";
+import { DataStorage } from "../models/data-storage";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CurrencyService } from "../services/currency-service";
     NavigationConstants,
     LoginService,
     FinanceService,
-    CurrencyService
+    CurrencyService,
+    DataStorage
   ],
   bootstrap: [AppComponent]
 })

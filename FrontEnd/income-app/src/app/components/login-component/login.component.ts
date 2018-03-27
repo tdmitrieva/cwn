@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { User } from "../../models/user";
 import { LoginService } from "../../services/login-service";
 import { Router } from '@angular/router';
+import { DataStorage } from "../../models/data-storage";
 
 @Component({
   selector: 'app-login-component',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   user: User;
 
   constructor(private loginService: LoginService,
-              private router: Router) {
+              private router: Router,
+              private storageModel: DataStorage) {
     this.user = new User();
   }
 
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.loginService.getUser(this.user.Email).subscribe((result) => {
       if (result != null) {
         this.user = result;
-        this.loginService.currentUser = this.user;
+        this.storageModel.currentUser = this.user;
         this.router.navigate(['/finances']);
       }
       else {

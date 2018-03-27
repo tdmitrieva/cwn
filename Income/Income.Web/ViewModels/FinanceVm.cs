@@ -10,6 +10,6 @@ namespace Income.Web.ViewModels
         public int Id { get; set; }
         public double Amount { get; set; }
         public DateTime Date { get; set; }
-        public int CurrencyId { get; set; }
+        public CurrencyVm Currency { get; set; }
     }
 }

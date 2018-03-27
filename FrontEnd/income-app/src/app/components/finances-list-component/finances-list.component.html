@@ -17,7 +17,7 @@
 
     <ng-container matColumnDef="Currency">
       <mat-header-cell *matHeaderCellDef> Currency </mat-header-cell>
-      <mat-cell *matCellDef="let finance"> {{finance.Currency}} </mat-cell>
+      <mat-cell *matCellDef="let finance"> {{finance.Currency.Symbol}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
