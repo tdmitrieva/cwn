@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FinancesListComponent } from "../components/finances-list-component/finances-list.component";
 import { RouterModule, Route, Router } from '@angular/router';
-import { AddComponent } from "../components/add/add.component";
+import { AddComponent } from "../components/add-component/add.component";
 
 const routes: Route[] = [
     {
