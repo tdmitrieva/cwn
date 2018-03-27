@@ -6,6 +6,7 @@ namespace Income.Services
     public interface IFinanceService
     {
         IEnumerable<Finance> GetFinanceByUserEmail(string email);
-        void AddFinance(string email, Finance finance);
+        Finance AddFinance(string email, Finance finance);
+        void Delete(int id);
     }
 }

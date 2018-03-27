@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs/Observable";
 import { HttpClient } from "@angular/common/http";
 import { NavigationConstants } from "../common/navigation-constants";
 import { Finance } from "../models/finance";
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class FinanceService {
@@ -13,11 +13,15 @@ export class FinanceService {
       return this.http.get<Array<Finance>>(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE + '?email=' + email);
   }
 
-  public addFinance(email: string, finance: Finance){
-    return this.http.post(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE, {
+  public addFinance(email: string, finance: Finance): Observable<Finance>{
+    return this.http.post<Finance>(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE, {
       email: email,
       finance: finance
     });
+  }
+
+  public deleteFinance(id: number) {
+    return this.http.delete(this.navigationConstants.API_URL + this.navigationConstants.FINANCES_BASE + '/' + id);
   }
 
 }

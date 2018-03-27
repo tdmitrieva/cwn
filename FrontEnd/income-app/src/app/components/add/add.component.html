@@ -1,18 +1,21 @@
-<div fxLayout="row" fxLayoutGap="5px">
+<div fxLayout="row" fxLayoutGap="5px" [formGroup]="newFinanceFormGroup">
   <mat-form-field fxFlex>
-    <input name="transactionDate" matInput [matDatepicker]="transactionDate" placeholder="Choose a date" [(ngModel)]="finance.Date">
+    <input required [formControl]="transactionDateControl" name="transactionDate" matInput [matDatepicker]="transactionDate" placeholder="Choose a date" [(ngModel)]="finance.Date">
     <mat-datepicker-toggle matSuffix [for]="transactionDate"></mat-datepicker-toggle>
     <mat-datepicker #transactionDate></mat-datepicker>
+    <mat-error *ngIf="transactionDateControl.hasError('required')">Select date.</mat-error>
   </mat-form-field>
   <mat-form-field fxFlex>
-    <input name="amount" type="number" matInput placeholder="Input amount" [(ngModel)]="finance.Amount">
+    <input required [formControl]="amountControl" name="amount" type="number" matInput placeholder="Input amount" [(ngModel)]="finance.Amount">
+    <mat-error *ngIf="amountControl.hasError('required')">Input amount.</mat-error>
   </mat-form-field>
   <mat-form-field fxFlex>
-    <mat-select name="currency" placeholder="Select currency" [(ngModel)]="selectedCurrency" >
+    <mat-select [formControl]="currencyControl" required name="currency" placeholder="Select currency" [(ngModel)]="selectedCurrency" >
       <mat-option *ngFor="let currency of currencyList" [(value)]="currency.Id">
         {{ currency.Symbol }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="currencyControl.hasError('required')">Select currency.</mat-error>
   </mat-form-field>
   <button mat-icon-button (click)="onAddClick()">
     <mat-icon>add</mat-icon>

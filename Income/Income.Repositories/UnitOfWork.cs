@@ -5,7 +5,7 @@ namespace Income.Repositories
 {
     internal class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private readonly IncomeDbContext dbContext = new IncomeDbContext();
+        private static readonly IncomeDbContext dbContext = new IncomeDbContext();
         private readonly RepositoriesContainer repositoriesContainer;
         private bool disposed = false;
 

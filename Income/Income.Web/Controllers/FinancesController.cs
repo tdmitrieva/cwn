@@ -30,12 +30,7 @@ namespace Income.Web.Controllers
                     Id = f.Id,
                     Amount = f.Amount,
                     Date = f.Date,
-                    Currency = new CurrencyVm
-                    {
-                        Id = f.Currency.Id,
-                        Name = f.Currency.Name,
-                        Symbol = f.Currency.Symbol
-                    }
+                    Currency = ConvertCurruncy(f.Currency)
                 });
                 return Request.CreateResponse(HttpStatusCode.OK, financesVm); ;
             }
@@ -55,12 +50,40 @@ namespace Income.Web.Controllers
                     Currency = currencyService.GetById(financeToAdd.Finance.Currency.Id),
                     Date = financeToAdd.Finance.Date
                 };
-                financeService.AddFinance(financeToAdd.Email, financeModel);
+                Finance resultFinance = financeService.AddFinance(financeToAdd.Email, financeModel);
+                FinanceVm resultFinanceVm = new FinanceVm
+                {
+                    Id = resultFinance.Id,
+                    Amount = resultFinance.Amount,
+                    Date = resultFinance.Date,
+                    Currency = ConvertCurruncy(resultFinance.Currency)
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, resultFinanceVm);
             }
             catch (ArgumentException)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
+        }
+
+        private CurrencyVm ConvertCurruncy(Currency currency)
+        {
+            CurrencyVm resultCurrency = null;
+            if(currency != null)
+            {
+                resultCurrency = new CurrencyVm
+                {
+                    Id = currency.Id,
+                    Name = currency.Name,
+                    Symbol = currency.Symbol
+                };
+            }
+            return resultCurrency;
+        }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            financeService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
     }

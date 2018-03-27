@@ -4,7 +4,7 @@
 <div fxLayout="row">&nbsp;</div>
 
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="financesList">
+  <mat-table #table [dataSource]="dataSource">
     <ng-container matColumnDef="Date">
       <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
       <mat-cell *matCellDef="let finance"> {{finance.Date | date:'dd/MM/yyyy'}} </mat-cell>
@@ -18,6 +18,16 @@
     <ng-container matColumnDef="Currency">
       <mat-header-cell *matHeaderCellDef> Currency </mat-header-cell>
       <mat-cell *matCellDef="let finance"> {{finance.Currency.Symbol}} </mat-cell>
+    </ng-container>
+
+    <ng-container>
+
+    </ng-container>
+    <ng-container matColumnDef="deleteColumn">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let finance"> 
+        <button mat-raised-button (click)="onRemoveClick(finance.Id)">Delete</button>
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
